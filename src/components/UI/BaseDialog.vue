@@ -1,9 +1,13 @@
+this component has slots. Slots enable a parent component
+to pass dom elements to a child 
+we use teleport to move the dialog to a position of choice
 <template>
   <teleport to="body">
     <div @click="$emit('close')"></div>
     <dialog open>
       <header>
         <slot name="header">
+          <!-- fallback content if none is passed by parent -->
           <h2>{{ title }}</h2>
         </slot>
       </header>

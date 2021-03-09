@@ -1,4 +1,9 @@
 <template>
+  <!-- the base dialog component has three slots  -->
+  <!-- we also pass the title attr. 
+      the child also emits an event which we thus listen to and call a method
+ -->
+
   <base-dialog
     v-if="inputIsInvalid"
     title="Invalid Input"
@@ -50,6 +55,7 @@ export default {
   },
   methods: {
     submitData() {
+      // 
       const enteredTitle = this.$refs.enteredTitle.value;
       const enteredDescription = this.$refs.enteredDescription.value;
       const enteredLink = this.$refs.enteredLink.value;
@@ -69,10 +75,12 @@ export default {
       this.inputIsInvalid = false;
     },
   },
+  // access the method passed
   inject: ['addResource'],
 };
 </script>
 
+// this styles are only scoped to this component
 <style scoped>
 label {
   font-weight: bold;

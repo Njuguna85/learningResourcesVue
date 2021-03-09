@@ -53,7 +53,7 @@ export default {
     };
   },
   // this option allows us to send data(arr/obj) to descedant components no matter how nested they are.
-  // in this case the descedant are 
+  // in this case the descedant are
   //    1. AddResource which accesses the method addresource
   //    2. LearningResource that deletes a resource
   provide() {
@@ -82,7 +82,9 @@ export default {
         description,
         link,
       };
+      // add the new resources to the first position of array
       this.storedResources.unshift(newResource);
+      // change the tab on view
       this.selectedTab = 'stored-resources';
     },
     removeResource(id) {
