@@ -1,11 +1,13 @@
 <template>
   <header>
+    <!-- interpolate the custom attr -->
     <h1>{{ title }}</h1>
   </header>
 </template>
 
 <script>
 export default {
+  // custom attribute for this component
   props: ['title'],
 };
 </script>
